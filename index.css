@@ -1,6 +1,25 @@
+
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.increment{
+    color: green;
+    background-color: #fff;
+    border: 1px solid gray ;
+    border-radius: 20%;
+}
+.reset{
+    color: black;
+    background-color: #fff;
+    border: 1px solid gray ;
+    border-radius: 20%;
+}
+.decrement{
+    color: red;
+    background-color: #fff;
+    border: 1px solid gray ;
+    border-radius: 20%;
 }

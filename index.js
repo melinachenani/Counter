@@ -1,31 +1,26 @@
 //selectors
-const incrementBtn = document.querySelector(".increment");
+const buttons = document.querySelectorAll(".btn");
 const counterValue = document.querySelector(".counter span");
-const decrementBtn = document.querySelector(".decrement");
-const resetBtn = document.querySelector(".reset");
 
 
 
-//event listeners
 let count = 0;
-incrementBtn.addEventListener("click", incFunction);
-decrementBtn.addEventListener("click", decFunction);
-resetBtn.addEventListener("click", resetFunction);
+
+//Event listener & function
 
 
+buttons.forEach((btn)=> {
+    btn.addEventListener("click", () =>{
+        const classList = btn.classList;
+        if(classList.contains("increment"))count++;
+        else if(classList.contains("decrement"))count--;
+        else count = 0;
 
-//functions
-function incFunction(){
-    count++;
-    counterValue.textContent = count;
-}
+        if(count>0) counterValue.style.color = "green";
+        else if(count<0) counterValue.style.color = "red";
+        else counterValue.style.color = "black";
 
-function decFunction(){
-    count--;
-    counterValue.textContent = count;
-}
-
-function resetFunction(){
-    count = 0;
-    counterValue.textContent = count;
-}
+        counterValue.textContent = count;
+    });
+    
+});
